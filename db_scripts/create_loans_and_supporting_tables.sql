@@ -49,7 +49,8 @@ CREATE TABLE loans_raw_fannie (
   zip_code varchar(10),
   mip numeric,
   product_type varchar(20),
-  co_borrower_credit_score integer
+  co_borrower_credit_score integer,
+  mip_type char(1)
 );
 
 CREATE TABLE loans (
@@ -158,7 +159,21 @@ CREATE TABLE monthly_observations_raw_fannie (
   modification_flag char(1),
   zero_balance_code varchar(2),
   zero_balance_date varchar(20),
-  repurchase_date varchar(20)
+  last_paid_installment_date varchar(20),
+  foreclosure_date varchar(20),
+  disposition_date varchar(20),
+  foreclosure_costs numeric,
+  property_preservation_repair_costs numeric,
+  asset_recovery_costs numeric,
+  misc_holding_expenses_credits numeric,
+  assoc_taxes_for_holding_property numeric,
+  net_sale_proceeds numeric,
+  credit_enhancement_proceeds numeric,
+  repurchae_make_whole_proceeds numeric,
+  other_foreclosure_proceeds numeric,
+  non_interest_bearing_upb numeric,
+  principal_forgiveness_upb numeric,
+  repurchase_make_whole_proceeds_flag char(1)
 );
 
 CREATE TABLE monthly_observations (
